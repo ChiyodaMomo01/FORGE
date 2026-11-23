@@ -1,0 +1,20 @@
+{
+  "case_name": "mhd2d",
+  "benchmark_metadata": {
+    "case_name": "mhd2d",
+    "default_initialization_workflow": "physics_start",
+    "supported_workflows": [
+      "physics_start",
+      "paired_pretrain"
+    ],
+    "grid_coarsening": "256x256 -> 64x64",
+    "closure_parameters": 490057,
+    "window_horizon": 20,
+    "sample_dt": 0.025,
+    "fine_rounds": 100,
+    "directions": 16,
+    "training_groups_per_round": 16,
+    "window_budget_anchor": 278544
+  },
+  "recipe_overrides": {}
+}

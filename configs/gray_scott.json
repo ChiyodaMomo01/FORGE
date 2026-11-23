@@ -1,0 +1,27 @@
+{
+  "case_name": "gray_scott",
+  "benchmark_metadata": {
+    "case_name": "gray_scott",
+    "default_initialization_workflow": "physics_start",
+    "supported_workflows": [
+      "physics_start",
+      "paired_pretrain"
+    ],
+    "grid_coarsening": "768x768 -> 96x96",
+    "closure_parameters": 489057,
+    "window_horizon": 20,
+    "sample_dt": 10.0,
+    "fine_rounds": 100,
+    "directions": 16,
+    "training_groups_per_round": 40,
+    "window_budget_anchor": 736756
+  },
+  "recipe_overrides": {},
+  "cli_defaults": {
+    "--body-basis-mode": "dense",
+    "--body-compensation-rank": 4,
+    "--stage-one-trust-mode": "conditional_resolve",
+    "--damping-mode": "response_scaled",
+    "--head-weight-penalty-eta": 1e-08
+  }
+}

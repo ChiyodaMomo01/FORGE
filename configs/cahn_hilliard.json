@@ -1,0 +1,20 @@
+{
+  "case_name": "cahn_hilliard",
+  "benchmark_metadata": {
+    "case_name": "cahn_hilliard",
+    "default_initialization_workflow": "paired_pretrain",
+    "supported_workflows": [
+      "paired_pretrain",
+      "physics_start"
+    ],
+    "grid_coarsening": "384x384 -> 96x96",
+    "closure_parameters": 489057,
+    "window_horizon": 20,
+    "sample_dt": 0.1,
+    "fine_rounds": 100,
+    "directions": 16,
+    "training_groups_per_round": 40,
+    "window_budget_anchor": 701440
+  },
+  "recipe_overrides": {}
+}

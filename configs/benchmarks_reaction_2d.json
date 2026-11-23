@@ -1,0 +1,38 @@
+{
+  "name": "FORGE-Reaction2D",
+  "version": "reaction-2d-v1",
+  "status": "frozen_cpu_float64_production",
+  "splits": {
+    "train": 48,
+    "validation": 16,
+    "test_id": 16
+  },
+  "lr_grid": 96,
+  "dtype": "float64",
+  "storage_dtype": "float32",
+  "reference_origin": "CPU float64 high-resolution forward numerical reference with cell-average restriction",
+  "cases": {
+    "gray_scott": {
+      "seed_base": 1610000,
+      "hr_grid": 768,
+      "frames": 1000,
+      "sample_dt": 10.0,
+      "burn_in": 10000.0,
+      "reference_config": {
+        "max_substep": 0.25
+      },
+      "deployment_config": {}
+    },
+    "cahn_hilliard": {
+      "seed_base": 1710000,
+      "hr_grid": 384,
+      "frames": 500,
+      "sample_dt": 0.1,
+      "burn_in": 0.0,
+      "reference_config": {
+        "dt": 0.00125
+      },
+      "deployment_config": {}
+    }
+  }
+}

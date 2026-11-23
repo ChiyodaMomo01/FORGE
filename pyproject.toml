@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "forge-closures"
+version = "1.0.0"
+description = "FORGE: Forward-Only Response and Gauss-Newton Estimation for Closed-Loop Neural Closures in Physical Simulators"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "torch>=2.4",
+]
+
+[project.optional-dependencies]
+pom3d = [
+    "netCDF4>=1.6",
+    "triton>=3.0; platform_system == 'Linux'",
+]
+dev = ["ruff==0.16.6"]
+
+[project.scripts]
+forge-2d = "forge.run:main"
+forge-pom3d = "forge_pom3d.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["forge*", "forge_pom3d*"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E9", "F", "I", "B"]

@@ -1,0 +1,33 @@
+{
+  "protocol": "pure_4h",
+  "benchmark_metadata": {
+    "case_name": "pom3d_double_gyre",
+    "initialization": "zero_residual_head",
+    "grid": [
+      90,
+      82,
+      16
+    ],
+    "active_vertical_levels": 15,
+    "in_channels": 161,
+    "out_channels": 60,
+    "closure_parameters": 4271172,
+    "readout_parameters": 15420,
+    "dti_seconds": 600.0,
+    "dte_seconds": 20.0,
+    "isplit": 30,
+    "ra_filter_smoth": 0.15,
+    "hours_per_window": 4,
+    "segments_per_window": 12
+  },
+  "config_overrides": {
+    "forge_rounds": 800,
+    "forge_num_directions": 8,
+    "forge_comp_rank": 4,
+    "forge_probe_eps": 0.35,
+    "forge_stage2_probe_amp": 0.2,
+    "forge_proj_steps": 60,
+    "max_window_budget": 121504.0,
+    "ad_max_epochs": 300
+  }
+}

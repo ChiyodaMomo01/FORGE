@@ -1,0 +1,8 @@
+include LICENSE README.md pyproject.toml
+recursive-include assets *.png
+recursive-include configs *.json
+recursive-include docs *.md
+recursive-include scripts *.py *.sh
+global-exclude __pycache__ *.py[cod] *.log *.out *.err *.jsonl *.pt *.pth *.ckpt *.npz *.npy *.gz *.tar test_* *_test.py .DS_Store
+prune tests
+prune .ruff_cache

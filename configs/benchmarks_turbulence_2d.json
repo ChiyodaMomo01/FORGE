@@ -1,0 +1,80 @@
+{
+  "name": "FORGE-Turbulence2D",
+  "version": "turbulence-2d-v1",
+  "status": "frozen_gpu_float64_production",
+  "splits": {
+    "train": 24,
+    "validation": 8,
+    "test_id": 8
+  },
+  "lr_grid": 64,
+  "dtype": "float64",
+  "storage_dtype": "float32",
+  "reference_origin": "GPU float64 256x256 3/2-dealiased 4-stage Cox-Matthews ETD-RK4 reference; Fourier Galerkin restriction with zeroed Nyquist lines",
+  "cases": {
+    "kolmogorov_ns": {
+      "seed_base": 2110000,
+      "hr_grid": 256,
+      "frames": 160,
+      "sample_dt": 0.02,
+      "burn_in": 25.0,
+      "forcing_description": "unidirectional sinusoidal Kolmogorov shear: curl f = -A * k_f * cos(k_f * y)",
+      "reference_config": {
+        "viscosity": 0.0005,
+        "drag": 0.1,
+        "forcing_amp": 1.0,
+        "forcing_wavenumber": 6,
+        "substeps": 10
+      },
+      "deployment_config": {
+        "viscosity": 0.0005,
+        "drag": 0.1,
+        "forcing_amp": 1.0,
+        "forcing_wavenumber": 6,
+        "substeps": 2
+      },
+      "reference_revision": 1
+    },
+    "mhd2d": {
+      "seed_base": 2210000,
+      "hr_grid": 256,
+      "frames": 160,
+      "sample_dt": 0.025,
+      "burn_in": 35.0,
+      "forcing_description": "2D cellular vortex forcing: curl f = -A * k_f * cos(k_f * x) * cos(k_f * y) bending uniform guide field B0 * e_x",
+      "reference_config": {
+        "viscosity": 0.0005,
+        "resistivity": 0.0005,
+        "drag": 0.05,
+        "guide_field": 0.5,
+        "forcing_amp": 1.0,
+        "forcing_wavenumber": 4,
+        "substeps": 10
+      },
+      "deployment_config": {
+        "viscosity": 0.0005,
+        "resistivity": 0.0005,
+        "drag": 0.05,
+        "guide_field": 0.5,
+        "forcing_amp": 1.0,
+        "forcing_wavenumber": 4,
+        "substeps": 2
+      },
+      "reference_revision": 1
+    }
+  },
+  "delivery_policy": {
+    "id": "turbulence-2d-v1",
+    "dev_qualification_seeds": [
+      990001,
+      990002
+    ],
+    "pair_stride": 4,
+    "pairs_per_parent": {
+      "train": 40,
+      "validation": 40,
+      "test_id": 0
+    },
+    "required": "80 independent parents (40 kolmogorov_ns + 40 mhd2d), float64 HR evolution, bit-exact LR replay, enforced F restriction commutation <=1e-12, independent complex-DFT restriction check, hard zero-mean/zero-divergence/CFL/non-collapsing-magnetic-energy screens"
+  }
+}

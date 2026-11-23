@@ -1,0 +1,20 @@
+{
+  "case_name": "kolmogorov_ns",
+  "benchmark_metadata": {
+    "case_name": "kolmogorov_ns",
+    "default_initialization_workflow": "physics_start",
+    "supported_workflows": [
+      "physics_start",
+      "paired_pretrain"
+    ],
+    "grid_coarsening": "256x256 -> 64x64",
+    "closure_parameters": 490027,
+    "window_horizon": 20,
+    "sample_dt": 0.02,
+    "fine_rounds": 100,
+    "directions": 16,
+    "training_groups_per_round": 16,
+    "window_budget_anchor": 283228
+  },
+  "recipe_overrides": {}
+}
