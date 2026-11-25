@@ -24,6 +24,8 @@
 
 <div align="center">
 
+[![arXiv](https://img.shields.io/badge/arXiv-2611.31964-b31b1b.svg)](https://arxiv.org/abs/2611.31964)
+[![Paper](https://img.shields.io/badge/Paper-PDF-dc2626.svg)](https://arxiv.org/pdf/2611.31964)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776ab.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.4%2B-ee4c2c.svg)](https://pytorch.org/)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
@@ -216,6 +218,8 @@ If you find FORGE useful in your research, please cite:
 @article{shu2026forge,
   title={Sounding the Black Box: Online Training of Embedded Neural Networks in Forward-Only Physical Simulators},
   author={Shu, Ruiqi and Gao, Tianrun and Wen, Haomin and Huang, Xiaomeng},
-  year={2026}
+  journal={arXiv preprint arXiv:2611.31964},
+  year={2026},
+  url={https://arxiv.org/abs/2611.31964}
 }
 ```
